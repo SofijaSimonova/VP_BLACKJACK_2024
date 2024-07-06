@@ -35,10 +35,10 @@
             this.start_btn = new System.Windows.Forms.Button();
             this.right_btn = new System.Windows.Forms.Button();
             this.left_btn = new System.Windows.Forms.Button();
-            this.nud_balance = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProviderName = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_balance)).BeginInit();
+            this.tb_amount = new System.Windows.Forms.TextBox();
+            this.btn_deposit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).BeginInit();
             this.SuspendLayout();
@@ -80,11 +80,11 @@
             // start_btn
             // 
             this.start_btn.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.start_btn.Location = new System.Drawing.Point(291, 213);
+            this.start_btn.Location = new System.Drawing.Point(299, 227);
             this.start_btn.Name = "start_btn";
             this.start_btn.Size = new System.Drawing.Size(96, 49);
             this.start_btn.TabIndex = 4;
-            this.start_btn.Text = "START";
+            this.start_btn.Text = "START PLAYING";
             this.start_btn.UseVisualStyleBackColor = true;
             this.start_btn.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -101,7 +101,7 @@
             // 
             // left_btn
             // 
-            this.left_btn.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.left_btn.ForeColor = System.Drawing.SystemColors.Desktop;
             this.left_btn.Location = new System.Drawing.Point(60, 176);
             this.left_btn.Name = "left_btn";
             this.left_btn.Size = new System.Drawing.Size(47, 33);
@@ -109,38 +109,6 @@
             this.left_btn.Text = "<<";
             this.left_btn.UseVisualStyleBackColor = true;
             this.left_btn.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // nud_balance
-            // 
-            this.nud_balance.BackColor = System.Drawing.SystemColors.Window;
-            this.nud_balance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_balance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.nud_balance.Increment = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nud_balance.Location = new System.Drawing.Point(241, 162);
-            this.nud_balance.Maximum = new decimal(new int[] {
-            20000,
-            0,
-            0,
-            0});
-            this.nud_balance.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nud_balance.Name = "nud_balance";
-            this.nud_balance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nud_balance.Size = new System.Drawing.Size(205, 26);
-            this.nud_balance.TabIndex = 8;
-            this.nud_balance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nud_balance.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
             // 
             // pictureBox1
             // 
@@ -159,13 +127,40 @@
             // 
             this.errorProviderName.ContainerControl = this;
             // 
+            // tb_amount
+            // 
+            this.tb_amount.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_amount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_amount.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tb_amount.Enabled = false;
+            this.tb_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_amount.ForeColor = System.Drawing.Color.ForestGreen;
+            this.tb_amount.Location = new System.Drawing.Point(241, 163);
+            this.tb_amount.Name = "tb_amount";
+            this.tb_amount.Size = new System.Drawing.Size(104, 26);
+            this.tb_amount.TabIndex = 9;
+            this.tb_amount.Text = "0$";
+            this.tb_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btn_deposit
+            // 
+            this.btn_deposit.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btn_deposit.Location = new System.Drawing.Point(361, 158);
+            this.btn_deposit.Name = "btn_deposit";
+            this.btn_deposit.Size = new System.Drawing.Size(85, 37);
+            this.btn_deposit.TabIndex = 10;
+            this.btn_deposit.Text = "DEPOSIT MONEY";
+            this.btn_deposit.UseVisualStyleBackColor = true;
+            this.btn_deposit.Click += new System.EventHandler(this.btn_deposit_Click);
+            // 
             // Usercreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(486, 288);
-            this.Controls.Add(this.nud_balance);
+            this.Controls.Add(this.btn_deposit);
+            this.Controls.Add(this.tb_amount);
             this.Controls.Add(this.left_btn);
             this.Controls.Add(this.right_btn);
             this.Controls.Add(this.pictureBox1);
@@ -176,7 +171,6 @@
             this.Name = "Usercreation";
             this.Text = "Usercreation";
             this.Load += new System.EventHandler(this.Usercreation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_balance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).EndInit();
             this.ResumeLayout(false);
@@ -193,7 +187,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button right_btn;
         private System.Windows.Forms.Button left_btn;
-        private System.Windows.Forms.NumericUpDown nud_balance;
         private System.Windows.Forms.ErrorProvider errorProviderName;
+        private System.Windows.Forms.Button btn_deposit;
+        private System.Windows.Forms.TextBox tb_amount;
     }
 }

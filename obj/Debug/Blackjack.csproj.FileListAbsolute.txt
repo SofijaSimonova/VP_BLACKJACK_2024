@@ -2,7 +2,6 @@ C:\Users\matej\source\repos\Blackjack\Blackjack\bin\Debug\Blackjack.exe.config
 C:\Users\matej\source\repos\Blackjack\Blackjack\bin\Debug\Blackjack.exe
 C:\Users\matej\source\repos\Blackjack\Blackjack\bin\Debug\Blackjack.pdb
 C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.csproj.AssemblyReference.cache
-C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.Form1.resources
 C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.csproj.GenerateResource.cache
 C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.csproj.CoreCompileInputs.cache
 C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.exe
@@ -12,3 +11,6 @@ C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.ChipTesting.
 C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.Usercreation.resources
 C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.Properties.Resources.resources
 C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.Playtest.resources
+C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.Payment.resources
+C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.FormTesting.resources
+C:\Users\matej\source\repos\Blackjack\Blackjack\obj\Debug\Blackjack.FormMain.resources

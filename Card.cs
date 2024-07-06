@@ -62,11 +62,6 @@ namespace Blackjack
           //TEKST - ko kaj chip isto
         }
 
-        public int GetValue() //TODO
-        {
-            //10, J, Q, K = 10
-            // 1 = 1/10 ???
-            return 0;
-        }
+        // public int GetValue() //TODO - ova bi idelo vo deck ili na drugo mesto radi 1(A) = 1/11
     }
 }

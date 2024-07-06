@@ -15,6 +15,7 @@ namespace Blackjack
     {
         public int playerpicture; //index na slika
         public Image[] profilepictures; //niza od sliki
+        public PaymentCard paymentcard;
         public Usercreation()
         {
             InitializeComponent();
@@ -62,23 +63,27 @@ namespace Blackjack
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Playtest playtest = new Playtest();
-            //Pozicijata da e ista ko na ovoj form
-            playtest.StartPosition = FormStartPosition.Manual;
-            playtest.Location = this.Location;
+            if (tb_amount.Text != "0$")
+            {
+                Playtest playtest = new Playtest();
+                //Pozicijata da e ista ko na ovoj form
+                playtest.StartPosition = FormStartPosition.Manual;
+                playtest.Location = this.Location;
 
-            //Ke nparavam objekt od Player i ke go predadam na formata
-            string username = tb_name.Text;
-            int balacne = (int) nud_balance.Value; //Vrakja decimal - cast vo int
-            Image image = profilepictures[playerpicture];
+                //Ke nparavam objekt od Player i ke go predadam na formata
+                string username = tb_name.Text;
+                int balacne = paymentcard.Amount;
+                Image image = profilepictures[playerpicture];
 
-            Player player = new Player(username, balacne, image);
-            playtest.player = player;
+                Player player = new Player(username, balacne, image, paymentcard);
+                playtest.player = player;
 
-            //VISIBLE - ja pravi nevidliva prvichnata forma. Efekt demek se zatvara
-            this.Visible = false;
-            playtest.ShowDialog();
-            this.Close();
+                //VISIBLE - ja pravi nevidliva prvichnata forma. Efekt demek se zatvara
+                this.Visible = false;
+                playtest.ShowDialog();
+                this.Close();
+            }
+
         }
 
         private void tb_name_Validating(object sender, CancelEventArgs e)
@@ -92,6 +97,23 @@ namespace Blackjack
             {
                 errorProviderName.SetError(tb_name, "Please enter your name:");
                 e.Cancel = true;
+            }
+        }
+
+        private void btn_deposit_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+
+            //Pozicijata da e ista ko na ovoj form
+            payment.StartPosition = FormStartPosition.Manual;
+            payment.Location = this.Location;
+
+            payment.ShowDialog();
+
+            if (payment.DialogResult == DialogResult.OK) //Успешен deposit
+            {
+                paymentcard = payment.playercard;
+                tb_amount.Text = paymentcard.Amount + "$";
             }
         }
     }
