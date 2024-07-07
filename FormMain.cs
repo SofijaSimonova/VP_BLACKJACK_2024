@@ -16,12 +16,12 @@ namespace Blackjack
      * NE GI BRISEME OVIE - KO DA IMAME U DOKUMENTOT DA STAVAME SO SME PRAVELE (✓) - napraveno
      * TUKA KE NAVEDUVAM IDEI
      * ✓ Treba nekakov algoritam za Dealerot (ako ima pomalce od tebe da vleze karta, ako ima povekje - prekini)
-     * Crtanje na karti, na sekoj hit (daj mi use edna karta) nekako ke treba da se pomestuvaat 
-     * Ednata karta na dealerot e skriena
+     * ✓ Crtanje na karti, na sekoj hit (daj mi use edna karta) nekako ke treba da se pomestuvaat 
+     * ✓ Ednata karta na dealerot e skriena
      * ✓ Balance sistem - userot da ima pari, i kolku ke vrakja na pobeda
      * ✓ Na pobeda da ima nekoj efekt ko da se prikaze na sredina kolku pari si dobil/izgubil pa da te vrati nazad
-     * Chipovite da se na soodvetni koordinati (kartite isto..)
-     * Site formi so ke gi pravime da se ista golemina za da izgleda ko da se prefrlas od edno na drugo meni
+     * ✓ Chipovite da se na soodvetni koordinati (kartite isto..)
+     * ✓ Site formi so ke gi pravime da se ista golemina za da izgleda ko da se prefrlas od edno na drugo meni
      * X POZADINA: ke se menuva od vreme na vreme demek trepka dealerot - koga ke pobedis :), izgubis :/
      * X POZADINA: demek ti dava karta edna slika, pa na sam sebe druga
      * ✓ BALANCE: Ako iskocka se, MessageBox dali saka da stavi pari ili da izgasi?
@@ -55,22 +55,49 @@ namespace Blackjack
 
         private void btn_play_Click(object sender, EventArgs e)
         {
-            //TO-DO
-        }
-
-        private void btn_testing_Click(object sender, EventArgs e)
-        {
             //Прекини ја музиката ако е пуштена
             if (!muteEnabled)
             {
                 menuMusic.Stop();
             }
 
+            FormCreation creationForm = new FormCreation();
+            //Позицијата да е иста ко на овој form
+            creationForm.StartPosition = FormStartPosition.Manual;
+
+            int centerX = this.Location.X + (this.Width / 2) - (creationForm.Width / 2);
+            int centerY = this.Location.Y + (this.Height / 2) - (creationForm.Height / 2);
+            creationForm.Location = new Point(centerX, centerY);
+            creationForm.Location = this.Location;
+
+            //Изгаси ја формава, со VISIBLE ќе направиме да изгледа како одма да се изгасила
+            this.Visible = false;
+            creationForm.ShowDialog();
+            this.Close();
+
+            //Продолжи со музиката ако е пуштена
+            if (!muteEnabled)
+            {
+                menuMusic.PlayLooping();
+            }
+        }
+
+        private void btn_testing_Click(object sender, EventArgs e)
+        {
+
+            //Прекини ја музиката ако е пуштена
+            if (!muteEnabled)
+            {
+                menuMusic.Stop();
+            }
 
             FormTesting testingForm = new FormTesting();
             //Позицијата да е иста ко на овој form
             testingForm.StartPosition = FormStartPosition.Manual;
-            testingForm.Location = this.Location;
+
+            int centerX = this.Location.X + (this.Width / 2) - (testingForm.Width / 2);
+            int centerY = this.Location.Y + (this.Height / 2) - (testingForm.Height / 2);
+            testingForm.Location = new Point(centerX, centerY);
 
             //VISIBLE - ја прави невидлива оваа форма. Целта е да се постигне поинтерактивен ефект
             this.Visible = false;
@@ -86,6 +113,7 @@ namespace Blackjack
 
         private void btn_mutesounds_Click(object sender, EventArgs e)
         {
+
             muteEnabled = (!muteEnabled);
             //Promeni ikona
             if (muteEnabled) //Прекини ја песната

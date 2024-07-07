@@ -47,18 +47,28 @@ namespace Blackjack
             chipTesting.ShowDialog();
             this.Visible = true;
         }
-
+        
         private void btn_demo_Click(object sender, EventArgs e)
         {
-            Usercreation usercreation = new Usercreation();
-            //Позицијата да е иста ко на овој form
-            usercreation.StartPosition = FormStartPosition.Manual;
-            usercreation.Location = this.Location;
+            //Порано се отвараше прозорец за креирање user сега директно со предифиниран корисник
+            Playtest playtest = new Playtest();
+            //Позицијата да е иста ко овој форм
+            playtest.StartPosition = FormStartPosition.Manual;
+            playtest.Location = this.Location;
 
-            //VISIBLE - ја прави невидлива оваа форма. Целта е да се постигне поинтерактивен ефект
+            //Ке направам некој тест објект од класите Player и PaymentCard
+            string username = "Tester";
+            int balacne = 999999;
+            Image image = Properties.Resources.PLAYER1;
+            PaymentCard paymentcard = new PaymentCard("9999 9999 9999 9999", "999", "01/2111", 999999);
+
+            Player player = new Player(username, balacne, image, paymentcard);
+            playtest.player = player;
+
+            //VISIBLE - ja pravi nevidliva prvichnata forma. Efekt demek se zatvara
             this.Visible = false;
-            usercreation.ShowDialog();
-            this.Visible = true;
+            playtest.ShowDialog();
+            this.Close();
         }
 
         private void btn_deck_MouseEnter(object sender, EventArgs e)

@@ -89,11 +89,49 @@ namespace Blackjack.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DEALER {
+            get {
+                object obj = ResourceManager.GetObject("DEALER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EXITSCREEN {
+            get {
+                object obj = ResourceManager.GetObject("EXITSCREEN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream loser_sound_v2 {
+            get {
+                return ResourceManager.GetStream("loser_sound_v2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream mainmenu_music {
             get {
                 return ResourceManager.GetStream("mainmenu_music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream menubutton_click {
+            get {
+                return ResourceManager.GetStream("menubutton_click", resourceCulture);
             }
         }
         
@@ -176,11 +214,40 @@ namespace Blackjack.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream positive_beeps {
+            get {
+                return ResourceManager.GetStream("positive_beeps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap portavlae {
+        internal static System.Drawing.Bitmap round_draw {
             get {
-                object obj = ResourceManager.GetObject("portavlae", resourceCulture);
+                object obj = ResourceManager.GetObject("round_draw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_lost {
+            get {
+                object obj = ResourceManager.GetObject("round_lost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap round_won {
+            get {
+                object obj = ResourceManager.GetObject("round_won", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -188,9 +255,9 @@ namespace Blackjack.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream positive_beeps {
+        internal static System.IO.UnmanagedMemoryStream winner_sound {
             get {
-                return ResourceManager.GetStream("positive_beeps", resourceCulture);
+                return ResourceManager.GetStream("winner_sound", resourceCulture);
             }
         }
     }

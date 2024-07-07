@@ -118,9 +118,9 @@
             this.lbl_muteDectiption.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_muteDectiption.Location = new System.Drawing.Point(379, 326);
             this.lbl_muteDectiption.Name = "lbl_muteDectiption";
-            this.lbl_muteDectiption.Size = new System.Drawing.Size(197, 18);
+            this.lbl_muteDectiption.Size = new System.Drawing.Size(98, 18);
             this.lbl_muteDectiption.TabIndex = 7;
-            this.lbl_muteDectiption.Text = "Mute music and sounds";
+            this.lbl_muteDectiption.Text = "Mute music";
             this.lbl_muteDectiption.Visible = false;
             // 
             // pb_blackjack
